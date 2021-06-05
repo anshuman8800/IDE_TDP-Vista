@@ -1,0 +1,1 @@
+creating a IDE/text-editor using QT Framework  
