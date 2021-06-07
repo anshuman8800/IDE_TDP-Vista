@@ -58,7 +58,7 @@ void TextEditor::on_actionOpen_triggered()
     if (okToContinue())
     {
         QString fileName = QFileDialog::getOpenFileName(this, tr("Open Text files"), ".",
-                            tr("Text Files (*.txt)"));
+                            tr("*"));
 
         if (!fileName.isEmpty())
         {
@@ -73,7 +73,7 @@ void TextEditor::on_actionOpen_triggered()
             }
 
             QTextStream in(&file);
-            ui->textEdit->setText(in.readAll());
+            ui->textEdit->setText(in.readAll());//setText is fnx of textEdit
             file.close();
             ui->textEdit->document()->setModified(false);
         }

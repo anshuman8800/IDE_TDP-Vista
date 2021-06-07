@@ -23,13 +23,20 @@
   <property name="statusTip">
    <string/>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border-color: rgb(85, 87, 83);</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <property name="enabled">
     <bool>true</bool>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -101,12 +108,13 @@
      <string>View</string>
     </property>
     <addaction name="actionRun"/>
+    <addaction name="actionChange_Theme"/>
    </widget>
    <widget class="QMenu" name="menuTerminal">
     <property name="title">
      <string>Terminal</string>
     </property>
-    <addaction name="actionNew_Terminal"/>
+    <addaction name="actionNew_Terminal_2"/>
     <addaction name="actionSplit_Terminal"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -336,6 +344,19 @@
     <string>About</string>
    </property>
   </action>
+  <action name="actionChange_Theme">
+   <property name="text">
+    <string>Change Theme</string>
+   </property>
+  </action>
+  <action name="actionNew_Terminal_2">
+   <property name="text">
+    <string>New Terminal</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -343,10 +364,10 @@
  </resources>
  <connections>
   <connection>
-   <sender>actionUndo</sender>
+   <sender>actionPaste</sender>
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
-   <slot>undo()</slot>
+   <slot>paste()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -359,10 +380,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionRedo</sender>
+   <sender>actionCopy</sender>
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
-   <slot>redo()</slot>
+   <slot>copy()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -391,10 +412,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionPaste</sender>
+   <sender>actionUndo</sender>
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
-   <slot>paste()</slot>
+   <slot>undo()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -407,10 +428,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionCopy</sender>
+   <sender>actionRedo</sender>
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
-   <slot>copy()</slot>
+   <slot>redo()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>

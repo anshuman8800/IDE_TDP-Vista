@@ -25,4 +25,6 @@ FORMS    += texteditor.ui \
 RESOURCES += \
     icons.qrc
 
-DISTFILES +=
+DISTFILES += \
+    ../project2/ListOfKeywords.txt \
+    ../project2/ListOfPreprocessKeywords.txt
